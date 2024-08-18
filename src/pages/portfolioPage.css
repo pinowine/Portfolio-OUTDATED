@@ -1,0 +1,317 @@
+﻿/* 初始状态 */
+@keyframes enterAnimation {
+    0% {
+      transform: translate(0, 50vh); /* 开始时下移，视觉上居中 */
+      opacity: 0;
+    }
+    100% {
+      transform: translate(0, 0); /* 结束时恢复原位 */
+      opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    from {
+      transform: translateY(100px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+}
+  
+@keyframes fadeInRight {
+    from {
+        transform: translateX(100px);
+        opacity: 0;
+    }
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+.page-switcher,
+.portfolio-page__date,
+.portfolio-page__title,
+.portfolio-page__tags,
+.portfolio-page__description {
+  /* 应用动画 */
+  animation: enterAnimation 0.3s ease forwards;
+}
+
+.portfolio-page__container {
+    padding: 150px 50px 0 50px;
+    max-width: 1060px;
+    margin: 0 auto;
+    transition: all 0.3s ease-in-out;
+}
+
+.intro {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.left {
+    height: 500px;
+    width: 500px;
+    transition: all 0.3s ease-in-out;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+}
+
+.page-switcher {
+    position: sticky;
+    bottom: 15px;
+    width: 500px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-switcher button {
+    background-color: transparent;
+    font-size: 14px;
+    padding: 5px;
+    color: var(--text-color);
+    border-radius: 6px;
+    box-shadow: none;
+    border-color: var(--text-color);
+    border-style: groove;
+    transition: all 0.3s ease-in-out;
+}
+
+.page-switcher button:hover {
+    color: var(--special-text);
+    border-color: var(--special-text);
+    background-color: var(--hover-bg-color);
+    cursor: pointer;
+    transition: all 0.3s ease-in-out;
+}
+
+.head-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: space-between;
+    height: 170px;
+}
+
+.portfolio-page__date {
+    color: var(--special-text);
+    font-size: 25px;
+    font-weight: bolder;
+    padding: 0;
+    margin: 0;
+    line-height: 25px;
+    position: relative;
+    bottom: -20px;
+    transition: all 0.3s ease-in-out;
+    flex-shrink: inherit;
+}
+
+.portfolio-page__title {
+    font-weight: bolder;
+    line-height: 40px;
+    color: var(--special-text);
+    font-size: 40px;
+    padding: 0;
+    margin: 0;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page__tags span {
+    color: var(--text-color);
+    margin: 0;
+}
+
+.portfolio-page__txt {
+    color: var(--text-color);
+    margin-top: 25px;
+    opacity: 0;
+    animation: fadeInUp 0.3s ease forwards;
+    transition: all 0.3s ease-in-out;
+}
+
+.relative-link {
+	margin-right: 20px;
+	font-size: 18px;
+	position: relative;
+	cursor: pointer;
+	color: var(--text-color);
+	text-decoration: none !important;
+	transition: all 0.3s ease-in;
+}
+
+.disabled-link {
+    cursor:auto;
+}
+
+.relative-link ::before {
+	content: '';
+	position: absolute;
+    top: 38px;
+	left: 0;
+	height: 2px;
+	background-color: transparent;
+	transition: all 0.5s ease-in;
+	width: 100%;
+}
+
+.relative-link :hover {
+	color: var(--special-text);
+    width: 100%;
+}
+
+.relative-link :hover::before {
+	content: '';
+	background-color: var(--special-text);
+    width: 33%;
+    transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page__description {
+    margin-top: 25px;
+    opacity: 0;
+    animation: fadeInUp 0.5s ease forwards;
+    animation-delay: 1.5s; /* 确保在标题动画结束后开始 */
+}
+
+.right {
+    width: 500px;
+    height: 500px;
+    overflow: hidden;
+	border-radius: 20px;
+    box-shadow:  0 0 10px 10px var(--box-shadow);
+	transition: all 0.3s ease-in-out;
+}
+
+.portfolio-page__img {
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    margin-bottom: 0;
+    animation: fadeInRight 0.5s ease forwards;
+    animation-delay: 1.5s; /* 确保在txt动画结束后开始 */
+}
+
+.gallery {
+    margin-top: 150px;
+}
+  
+
+/* responsive media query */
+
+@media screen and (max-width: 1100px) {
+    .portfolio-page__container {
+        padding: 0;
+    }
+
+    section.intro {
+        flex-direction: column-reverse;
+    }
+
+    .portfolio-page__container .left {
+        display: flex;
+        width: 100%;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        position: sticky;
+        top:10rem;
+        z-index: 10;
+        margin-top: 2rem;
+        background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 8%, rgba(0,0,0,0) 100%);
+    }
+
+    .head-container {
+        align-items: center;
+        height: auto;
+    }
+
+    .portfolio-page__date {
+        line-height: 25px;
+        position: sticky;
+    }
+
+    .portfolio-page__container .left button {
+        background-color: var(--background-color);
+    }
+
+    .portfolio-page__container .right {
+        width: 100%;
+        position: sticky;
+        top:0rem;
+        z-index:-1;
+        overflow: visible;
+    }
+
+    .portfolio-page__img-cover {
+        width: 100%;
+        content: '';
+        height: 510px;
+        position: absolute;
+        z-index:1;
+        background: linear-gradient(0deg, var(--background-color) 0%, var(--background-color) 8%, rgba(0,0,0,0) 100%);
+    }
+
+    .portfolio-page__img {
+        width: 100%;
+    }
+
+    section.gallery {
+        padding: 120px 50px 0 50px;
+        margin-top: 20px;
+    }
+
+    .portfolio-page__title {
+        display: flex;
+        align-items: center;
+        justify-items: center;
+    }
+
+    .relative-link :hover::before {
+        left: 10%;
+        right: 10%;
+        width: 80%;
+    }
+
+    .disabled-link {
+        cursor: default;
+    }
+
+    p.portfolio-page__txt {
+        padding: 0 3rem;
+        text-align: center;
+    }
+
+}
+
+@media screen and (max-width: 578px) {
+    .portfolio-page__container {
+        width: 578px;
+    }
+    
+    .portfolio-page__container .left {
+        top: 578px;
+        margin: 0;
+        padding-bottom: 10px;
+    }
+
+    .portfolio-page__img {
+        width:  100%;
+        overflow: hidden;
+    }
+    
+}
+

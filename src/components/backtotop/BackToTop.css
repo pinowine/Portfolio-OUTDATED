@@ -1,0 +1,20 @@
+﻿.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 60px;
+    z-index: 1000;
+    background-color: transparent;
+    font-size: 30px;
+    padding: 10px 10px;
+    color: var(--text-color);
+    border-radius: 6px;
+    border-style: none;
+    transition: all 0.6s ease;
+}
+
+.back-to-top:hover {
+    color: var(--special-text);
+    border-color: var(--special-text);
+    scale: 1.05;
+    cursor: pointer;
+}

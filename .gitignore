@@ -1,0 +1,45 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+*.py
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+
+# big files
+
+large_files_list.txt
+src/assets/portfolio/1
+src/assets/portfolio/2
+src/assets/portfolio/3
+src/assets/portfolio/4
+src/assets/portfolio/5
+src/assets/portfolio/6
+src/assets/portfolio/7
+src/assets/portfolio/8
+src/assets/portfolio/9
+src/assets/portfolio/10
+src/assets/portfolio/11
+src/assets/portfolio/12
+src/assets/portfolio/13
+src/assets/portfolio/14
